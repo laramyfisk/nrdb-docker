@@ -1,6 +1,4 @@
 <VirtualHost *:80>
-        ServerAdmin laramy.fisk@vfemail.net
-
         DocumentRoot /var/www/html
         <Directory />
                 Options FollowSymLinks
@@ -8,18 +6,9 @@
         </Directory>
         <Directory /var/www/html>
                 Options Indexes FollowSymLinks MultiViews
-                # To make wordpress .htaccess work
-                AllowOverride FileInfo
+                AllowOverride All
                 Order allow,deny
                 allow from all
-        </Directory>
-
-        ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
-        <Directory "/usr/lib/cgi-bin">
-                AllowOverride None
-                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-                Order allow,deny
-                Allow from all
         </Directory>
 
         ErrorLog ${APACHE_LOG_DIR}/error.log
