@@ -1,10 +1,12 @@
+User nrdb
+Group nrdb
 <VirtualHost *:80>
-        DocumentRoot /var/www/html
+        DocumentRoot /opt/nrdb/web
         <Directory />
                 Options FollowSymLinks
                 AllowOverride None
         </Directory>
-        <Directory /var/www/html>
+        <Directory /opt/nrdb/web>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride All
                 Order allow,deny
